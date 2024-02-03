@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Google Account Exterminator</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        hr {
+            border-color: rgb(48, 48, 48);
+            display: block;
+        }
+
+        .headline-texto {
+            color: lime;
+            padding: 10px;
+        }
+
+        .usuario-texto,
+        .email-texto,
+        .password-texto,
+        .login-texto {
+            color: lime;
+            padding: 10px;
+            border: none;
+            background: none;
+        }
+
+        .image-abstergo {
+            color: lime;
+            max-width: 140px;
+            float: left;
+        }
+
+        .container-div {
+            display: flex;
+            justify-content: center;
+        }
+
+        .row {
+            width: 100%;
+            display: flex;
+        }
+
+        .col {
+            width: 50%;
+            position: relative;
+        }
+
+        .vertical {
+            border-right: 6px solid rgb(75, 75, 75);
+            height: 200vh;
+            overflow: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .scrolling-text {
+            animation: scroll 4s linear infinite;
+            color: lime;
+            padding: 10px;
+            background: none;
+            border-left: 6px solid rgb(75, 75, 75);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-49%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container-div">
+                    <h1 class="headline-texto"> Google Account Exterminator</h1>
+                    <img class="image-abstergo" src="abstergo logo.png">
+                </div>
+                <hr />
+                <hr />
+                <br />
+                <label1 class="usuario-texto">Gmail</label1>
+                <input id="usuario-input" class="usuario-texto" type="text" placeholder="Type your email..." />
+                <br />
+                <br />
+                <label3 class="password-texto">Password</label3>
+                <input id="senha-input" class="password-texto" type="password" placeholder="Type your password...">
+                <br />
+                <br />
+                <button id="login-btn" class="login-texto">Login</button>
+                <button id="clear-btn" class="login-texto" style="display:none;">Delete All Accounts</button>
+                <br />
+                <br />
+                <hr />
+                <hr />
+                <script>
+                    // Define an array to store accounts
+                    var accounts = [];
+
+                    document.getElementById('login-btn').addEventListener('click', function () {
+                        var usuario = document.getElementById('usuario-input').value;
+                        var senha = document.getElementById('senha-input').value;
+                        var displayInfo = document.getElementById('display-info');
+
+                        // Limit the number of accounts to 10
+                        if (accounts.length < 10) {
+                            // Create an object to represent the account
+                            var account = {
+                                usuario: usuario,
+                                senha: senha
+                            };
+
+                            // Add the account object to the array
+                            accounts.push(account);
+
+                            // Generate HTML to display all accounts
+                            var displayHTML = '';
+                            accounts.forEach(function (acc) {
+                                displayHTML += 'Gmail: ' + acc.usuario + '<br>' + 'Password: ' + acc.senha + '<br><br>';
+                            });
+
+                            // Update the display-info element
+                            displayInfo.innerHTML = displayHTML;
+
+                            // Show clear button if 10 accounts are reached
+                            if (accounts.length << 1) {
+                                document.getElementById('clear-btn').style.display = 'inline-block';
+                            }
+                        }
+                    });
+
+                    // Clear all accounts
+                    document.getElementById('clear-btn').addEventListener('click', function () {
+                        accounts = [];
+                        document.getElementById('display-info').innerHTML = '';
+                        document.getElementById('clear-btn').style.display = 'none';
+                    });
+                </script>
+                <p style="color: lime;" id="display-info"></p>
+                <hr />
+                <hr />
+            </div>
+            <div class="col">
+                <div class="vertical">
+                    <p class="scrolling-text">
+                        07/12/2019  06:14              .
+                        07/12/2019  06:14             ..
+                            07/12/2019  06:10             3.110 about_BeforeEach_AfterEach.help.txt
+                            07/12/2019  06:10             6.396 about_Mocking.help.txt
+                            07/12/2019  06:10             5.056 about_Pester.help.txt
+                            07/12/2019  06:10             5.945 about_should.help.txt
+                            07/12/2019  06:10             1.156 about_TestDrive.help.txt
+                                           5 arquivo(s)         21.663 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Examples
+                            
+                            07/12/2019  06:31              .
+                            07/12/2019  06:31             ..
+                            07/12/2019  06:14            Calculator
+                            07/12/2019  06:14          Validator
+                                           0 arquivo(s)              0 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Examples\Calculator
+                            
+                            07/12/2019  06:14            .
+                            07/12/2019  06:14            ..
+                            07/12/2019  06:10                55 Add-Numbers.ps1
+                            07/12/2019  06:10               606 Add-Numbers.Tests.ps1
+                                           2 arquivo(s)            661 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Examples\Validator
+                            
+                            07/12/2019  06:14             .
+                            07/12/2019  06:14             ..
+                            07/12/2019  06:10               822 Validator.Tests.ps1
+                                           1 arquivo(s)            822 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions
+                            
+                            07/12/2019  06:31            ..
+                            07/12/2019  06:14              Assertions
+                            07/12/2019  06:10               457 BreakAndContinue.Tests.ps1
+                            07/12/2019  06:10             2.337 Context.ps1
+                            07/12/2019  06:10               758 Context.Tests.ps1
+                            07/12/2019  06:10            17.753 Coverage.ps1
+                            07/12/2019  06:10            11.436 Coverage.Tests.ps1
+                            07/12/2019  06:10             4.089 Describe.ps1
+                            07/12/2019  06:10               761 Describe.Tests.ps1
+                            07/12/2019  06:10               761 GlobalMock-A.Tests.ps1
+                            07/12/2019  06:10               732 GlobalMock-B.Tests.ps1
+                            07/12/2019  06:10               821 In.ps1
+                            07/12/2019  06:10               554 In.Tests.ps1
+                            07/12/2019  06:10             3.905 InModuleScope.ps1
+                            07/12/2019  06:10             1.608 InModuleScope.Tests.ps1
+                            07/12/2019  06:10            11.944 It.ps1
+                            07/12/2019  06:10             9.754 It.Tests.ps1
+                            07/12/2019  06:10            48.984 Mock.ps1
+                            07/12/2019  06:10            59.713 Mock.Tests.ps1
+                            07/12/2019  06:10             3.311 New-Fixture.ps1
+                            07/12/2019  06:10             3.202 New-Fixture.Tests.ps1
+                            07/12/2019  06:10            19.397 PesterState.ps1
+                            07/12/2019  06:10            14.444 PesterState.Tests.ps1
+                            07/12/2019  06:10            14.093 SetupTeardown.ps1
+                            07/12/2019  06:10             5.571 SetupTeardown.Tests.ps1
+                            07/12/2019  06:10             3.850 TestDrive.ps1
+                            07/12/2019  06:10             4.180 TestDrive.Tests.ps1
+                            07/12/2019  06:10            16.435 TestResults.ps1
+                            07/12/2019  06:10            27.623 TestResults.Tests.ps1
+                            07/12/2019  06:10             6.700 TestsRunningInCleanRunspace.Tests.ps1
+                                          28 arquivo(s)        295.173 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\Assertions
+                            
+                            07/12/2019  06:14             .
+                            07/12/2019  06:14             ..
+                            07/12/2019  06:10             4.129 Be.ps1
+                            07/12/2019  06:10             3.455 Be.Tests.ps1
+                            07/12/2019  06:10               374 BeGreaterThan.ps1
+                            07/12/2019  06:10               511 BeGreaterThan.Tests.ps1
+                            07/12/2019  06:10               365 BeLessThan.ps1
+                            07/12/2019  06:10               494 BeLessThan.Tests.ps1
+                            07/12/2019  06:10               389 BeLike.ps1
+                            07/12/2019  06:10               489 BeLike.Tests.ps1
+                            07/12/2019  06:10               413 BeLikeExactly.ps1
+                            07/12/2019  06:10               508 BeLikeExactly.Tests.ps1
+                            07/12/2019  06:10               579 BeNullOrEmpty.ps1
+                            07/12/2019  06:10               474 BeNullOrEmpty.Tests.ps1
+                            07/12/2019  06:10             1.395 BeOfType.ps1
+                            07/12/2019  06:10               691 BeOfType.Tests.ps1
+                            07/12/2019  06:10               454 Contain.ps1
+                            07/12/2019  06:10             1.004 Contain.Tests.ps1
+                            07/12/2019  06:10               490 ContainExactly.ps1
+                            07/12/2019  06:10               865 ContainExactly.Tests.ps1
+                            07/12/2019  06:10               289 Exist.ps1
+                            07/12/2019  06:10               999 Exist.Tests.ps1
+                            07/12/2019  06:10               387 Match.ps1
+                            07/12/2019  06:10               587 Match.Tests.ps1
+                            07/12/2019  06:10               425 MatchExactly.ps1
+                            07/12/2019  06:10               503 MatchExactly.Tests.ps1
+                            07/12/2019  06:10             2.291 PesterThrow.ps1
+                            07/12/2019  06:10             4.928 PesterThrow.Tests.ps1
+                            07/12/2019  06:10             1.013 Set-TestInconclusive.ps1
+                            07/12/2019  06:10             3.239 Should.ps1
+                            07/12/2019  06:10             5.407 Should.Tests.ps1
+                            07/12/2019  06:10               281 Test-Assertion.ps1
+                                          30 arquivo(s)         37.428 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Snippets
+                            
+                            07/12/2019  06:14             .
+                            07/12/2019  06:14            ..
+                            07/12/2019  06:10               801 Context.snippets.ps1xml
+                            07/12/2019  06:10               805 Describe.snippets.ps1xml
+                            07/12/2019  06:10               703 It.snippets.ps1xml
+                            07/12/2019  06:10               805 ShouldBe.snippets.ps1xml
+                            07/12/2019  06:10               842 ShouldBeGreaterThan.snippets.ps1xml
+                            07/12/2019  06:10               833 ShouldBeLessThan.snippets.ps1xml
+                            07/12/2019  06:10               840 ShouldBeNullOrEmpty.snippets.ps1xml
+                            07/12/2019  06:10               820 ShouldContain.snippets.ps1xml
+                            07/12/2019  06:10               814 ShouldExist.snippets.ps1xml
+                            07/12/2019  06:10               814 ShouldMatch.snippets.ps1xml
+                            07/12/2019  06:10               814 ShouldNotBe.snippets.ps1xml
+                            07/12/2019  06:10               852 ShouldNotBeNullOrEmpty.snippets.ps1xml
+                            07/12/2019  06:10               833 ShouldNotContain.snippets.ps1xml
+                            07/12/2019  06:10               827 ShouldNotExist.snippets.ps1xml
+                            07/12/2019  06:10               827 ShouldNotMatch.snippets.ps1xml
+                            07/12/2019  06:10               831 ShouldNotThrow.snippets.ps1xml
+                            07/12/2019  06:10               818 ShouldThrow.snippets.ps1xml
+                                          17 arquivo(s)         13.879 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+                            
+                            07/12/2019  06:31         .
+                            07/12/2019  06:31             ..
+                            07/12/2019  11:53            1.0.0.1
+                                           0 arquivo(s)              0 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1
+                            
+                            07/12/2019  11:53  R>          ..
+                            07/12/2019  06:12             2.783 PowerShellGet.psd1
+                            07/12/2019  06:12             8.251 PSGet.Format.ps1xml
+                            07/12/2019  06:12            79.986 PSGet.Resource.psd1
+                            07/12/2019  06:12           584.735 PSModule.psm1
+                            07/12/2019  11:53            pt-BR
+                                           4 arquivo(s)        675.755 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\pt-BR
+                            
+                            07/12/2019  11:53             .
+                            07/12/2019  11:53          ..
+                            07/12/2019  11:53            80.578 PSGet.Resource.psd1
+                                           1 arquivo(s)         80.578 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PSReadline
+                            
+                            07/12/2019  06:31            .
+                            07/12/2019  06:31           2.0.0
+                                           0 arquivo(s)              0 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0
+                            
+                            07/12/2019  11:53          .
+                            07/12/2019  11:53           ..
+                            07/12/2019  06:12           251.392 Microsoft.PowerShell.PSReadline.dll
+                            07/12/2019  06:12             8.551 PSReadLine.format.ps1xml
+                            07/12/2019  06:12               866 PSReadline.psd1
+                            07/12/2019  06:12               175 PSReadline.psm1
+                            07/12/2019  11:53            pt-BR
+                                           4 arquivo(s)        260.984 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\pt-BR
+                            
+                            07/12/2019  11:53            .
+                            07/12/2019  11:53             ..
+                            07/12/2019  11:53            32.256 Microsoft.PowerShell.PSReadline.Resources.dll
+                                           1 arquivo(s)         32.256 bytes
+                            
+                             Pasta de C:\Program Files\WinRAR
+                            
+                            14/07/2023  10:46           ..
+                            21/02/2019  13:00           209.408 7zxa.dll
+                            31/10/2020  16:04           323.276 Default.SFX
+                            31/10/2020  16:04           373.452 Default64.SFX
+                            28/01/2019  21:39             1.170 Descript.ion
+                            11/06/2014  08:45             7.435 License.txt
+                            15/06/2021  04:00             3.924 Order.htm
+                            11/06/2021  06:17           633.496 Rar.exe
+                            06/03/2021  17:18            29.256 rar.lng
+                            14/06/2021  09:55           123.660 Rar.txt
+                            11/06/2021  06:17           571.544 RarExt.dll
+                            29/01/2020  20:00             3.083 rarext.lng
+                            11/06/2021  06:17           496.792 RarExt32.dll
+                            14/04/2017  23:46             1.392 RarFiles.lst
+                            14/07/2023  10:46                24 rarnew.dat
+                            07/05/2013  14:36             1.501 ReadMe.txt
+                            11/06/2021  06:17           412.312 Uninstall.exe
+                            15/06/2021  04:01             6.791 uninstall.lng
+                            28/01/2019  21:44               418 Uninstall.lst
+                            11/06/2021  06:17           422.552 UnRAR.exe
+                            14/04/2006  18:54               157 UnrarSrc.txt
+                            10/06/2021  12:21            88.553 WhatsNew.txt
+                            13/11/2020  09:31           310.847 WinCon.SFX
+                            13/11/2020  09:31           361.023 WinCon64.SFX
+                            18/05/2021  07:17         2.772.178 WinRAR.chm
+                            14/06/2021  07:36         2.636.952 WinRAR.exe
+                            15/06/2021  04:47            97.784 winrar.lng
+                            31/10/2020  16:04           276.172 Zip.SFX
+                            31/10/2020  16:04           307.916 Zip64.SFX
+                            14/07/2023  10:46                22 zipnew.dat
+                            07/12/2019  06:14              .
+                        07/12/2019  06:14             ..
+                            07/12/2019  06:10             3.110 about_BeforeEach_AfterEach.help.txt
+                            07/12/2019  06:10             6.396 about_Mocking.help.txt
+                            07/12/2019  06:10             5.056 about_Pester.help.txt
+                            07/12/2019  06:10             5.945 about_should.help.txt
+                            07/12/2019  06:10             1.156 about_TestDrive.help.txt
+                                           5 arquivo(s)         21.663 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Examples
+                            
+                            07/12/2019  06:31              .
+                            07/12/2019  06:31             ..
+                            07/12/2019  06:14            Calculator
+                            07/12/2019  06:14          Validator
+                                           0 arquivo(s)              0 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Examples\Calculator
+                            
+                            07/12/2019  06:14            .
+                            07/12/2019  06:14            ..
+                            07/12/2019  06:10                55 Add-Numbers.ps1
+                            07/12/2019  06:10               606 Add-Numbers.Tests.ps1
+                                           2 arquivo(s)            661 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Examples\Validator
+                            
+                            07/12/2019  06:14             .
+                            07/12/2019  06:14             ..
+                            07/12/2019  06:10               822 Validator.Tests.ps1
+                                           1 arquivo(s)            822 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions
+                            
+                            07/12/2019  06:31            ..
+                            07/12/2019  06:14              Assertions
+                            07/12/2019  06:10               457 BreakAndContinue.Tests.ps1
+                            07/12/2019  06:10             2.337 Context.ps1
+                            07/12/2019  06:10               758 Context.Tests.ps1
+                            07/12/2019  06:10            17.753 Coverage.ps1
+                            07/12/2019  06:10            11.436 Coverage.Tests.ps1
+                            07/12/2019  06:10             4.089 Describe.ps1
+                            07/12/2019  06:10               761 Describe.Tests.ps1
+                            07/12/2019  06:10               761 GlobalMock-A.Tests.ps1
+                            07/12/2019  06:10               732 GlobalMock-B.Tests.ps1
+                            07/12/2019  06:10               821 In.ps1
+                            07/12/2019  06:10               554 In.Tests.ps1
+                            07/12/2019  06:10             3.905 InModuleScope.ps1
+                            07/12/2019  06:10             1.608 InModuleScope.Tests.ps1
+                            07/12/2019  06:10            11.944 It.ps1
+                            07/12/2019  06:10             9.754 It.Tests.ps1
+                            07/12/2019  06:10            48.984 Mock.ps1
+                            07/12/2019  06:10            59.713 Mock.Tests.ps1
+                            07/12/2019  06:10             3.311 New-Fixture.ps1
+                            07/12/2019  06:10             3.202 New-Fixture.Tests.ps1
+                            07/12/2019  06:10            19.397 PesterState.ps1
+                            07/12/2019  06:10            14.444 PesterState.Tests.ps1
+                            07/12/2019  06:10            14.093 SetupTeardown.ps1
+                            07/12/2019  06:10             5.571 SetupTeardown.Tests.ps1
+                            07/12/2019  06:10             3.850 TestDrive.ps1
+                            07/12/2019  06:10             4.180 TestDrive.Tests.ps1
+                            07/12/2019  06:10            16.435 TestResults.ps1
+                            07/12/2019  06:10            27.623 TestResults.Tests.ps1
+                            07/12/2019  06:10             6.700 TestsRunningInCleanRunspace.Tests.ps1
+                                          28 arquivo(s)        295.173 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Functions\Assertions
+                            
+                            07/12/2019  06:14             .
+                            07/12/2019  06:14             ..
+                            07/12/2019  06:10             4.129 Be.ps1
+                            07/12/2019  06:10             3.455 Be.Tests.ps1
+                            07/12/2019  06:10               374 BeGreaterThan.ps1
+                            07/12/2019  06:10               511 BeGreaterThan.Tests.ps1
+                            07/12/2019  06:10               365 BeLessThan.ps1
+                            07/12/2019  06:10               494 BeLessThan.Tests.ps1
+                            07/12/2019  06:10               389 BeLike.ps1
+                            07/12/2019  06:10               489 BeLike.Tests.ps1
+                            07/12/2019  06:10               413 BeLikeExactly.ps1
+                            07/12/2019  06:10               508 BeLikeExactly.Tests.ps1
+                            07/12/2019  06:10               579 BeNullOrEmpty.ps1
+                            07/12/2019  06:10               474 BeNullOrEmpty.Tests.ps1
+                            07/12/2019  06:10             1.395 BeOfType.ps1
+                            07/12/2019  06:10               691 BeOfType.Tests.ps1
+                            07/12/2019  06:10               454 Contain.ps1
+                            07/12/2019  06:10             1.004 Contain.Tests.ps1
+                            07/12/2019  06:10               490 ContainExactly.ps1
+                            07/12/2019  06:10               865 ContainExactly.Tests.ps1
+                            07/12/2019  06:10               289 Exist.ps1
+                            07/12/2019  06:10               999 Exist.Tests.ps1
+                            07/12/2019  06:10               387 Match.ps1
+                            07/12/2019  06:10               587 Match.Tests.ps1
+                            07/12/2019  06:10               425 MatchExactly.ps1
+                            07/12/2019  06:10               503 MatchExactly.Tests.ps1
+                            07/12/2019  06:10             2.291 PesterThrow.ps1
+                            07/12/2019  06:10             4.928 PesterThrow.Tests.ps1
+                            07/12/2019  06:10             1.013 Set-TestInconclusive.ps1
+                            07/12/2019  06:10             3.239 Should.ps1
+                            07/12/2019  06:10             5.407 Should.Tests.ps1
+                            07/12/2019  06:10               281 Test-Assertion.ps1
+                                          30 arquivo(s)         37.428 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\Pester\3.4.0\Snippets
+                            
+                            07/12/2019  06:14             .
+                            07/12/2019  06:14            ..
+                            07/12/2019  06:10               801 Context.snippets.ps1xml
+                            07/12/2019  06:10               805 Describe.snippets.ps1xml
+                            07/12/2019  06:10               703 It.snippets.ps1xml
+                            07/12/2019  06:10               805 ShouldBe.snippets.ps1xml
+                            07/12/2019  06:10               842 ShouldBeGreaterThan.snippets.ps1xml
+                            07/12/2019  06:10               833 ShouldBeLessThan.snippets.ps1xml
+                            07/12/2019  06:10               840 ShouldBeNullOrEmpty.snippets.ps1xml
+                            07/12/2019  06:10               820 ShouldContain.snippets.ps1xml
+                            07/12/2019  06:10               814 ShouldExist.snippets.ps1xml
+                            07/12/2019  06:10               814 ShouldMatch.snippets.ps1xml
+                            07/12/2019  06:10               814 ShouldNotBe.snippets.ps1xml
+                            07/12/2019  06:10               852 ShouldNotBeNullOrEmpty.snippets.ps1xml
+                            07/12/2019  06:10               833 ShouldNotContain.snippets.ps1xml
+                            07/12/2019  06:10               827 ShouldNotExist.snippets.ps1xml
+                            07/12/2019  06:10               827 ShouldNotMatch.snippets.ps1xml
+                            07/12/2019  06:10               831 ShouldNotThrow.snippets.ps1xml
+                            07/12/2019  06:10               818 ShouldThrow.snippets.ps1xml
+                                          17 arquivo(s)         13.879 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+                            
+                            07/12/2019  06:31         .
+                            07/12/2019  06:31             ..
+                            07/12/2019  11:53            1.0.0.1
+                                           0 arquivo(s)              0 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1
+                            
+                            07/12/2019  11:53  R>          ..
+                            07/12/2019  06:12             2.783 PowerShellGet.psd1
+                            07/12/2019  06:12             8.251 PSGet.Format.ps1xml
+                            07/12/2019  06:12            79.986 PSGet.Resource.psd1
+                            07/12/2019  06:12           584.735 PSModule.psm1
+                            07/12/2019  11:53            pt-BR
+                                           4 arquivo(s)        675.755 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\pt-BR
+                            
+                            07/12/2019  11:53             .
+                            07/12/2019  11:53          ..
+                            07/12/2019  11:53            80.578 PSGet.Resource.psd1
+                                           1 arquivo(s)         80.578 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PSReadline
+                            
+                            07/12/2019  06:31            .
+                            07/12/2019  06:31           2.0.0
+                                           0 arquivo(s)              0 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0
+                            
+                            07/12/2019  11:53          .
+                            07/12/2019  11:53           ..
+                            07/12/2019  06:12           251.392 Microsoft.PowerShell.PSReadline.dll
+                            07/12/2019  06:12             8.551 PSReadLine.format.ps1xml
+                            07/12/2019  06:12               866 PSReadline.psd1
+                            07/12/2019  06:12               175 PSReadline.psm1
+                            07/12/2019  11:53            pt-BR
+                                           4 arquivo(s)        260.984 bytes
+                            
+                             Pasta de C:\Program Files\WindowsPowerShell\Modules\PSReadline\2.0.0\pt-BR
+                            
+                            07/12/2019  11:53            .
+                            07/12/2019  11:53             ..
+                            07/12/2019  11:53            32.256 Microsoft.PowerShell.PSReadline.Resources.dll
+                                           1 arquivo(s)         32.256 bytes
+                            
+                             Pasta de C:\Program Files\WinRAR
+                            
+                            14/07/2023  10:46           ..
+                            21/02/2019  13:00           209.408 7zxa.dll
+                            31/10/2020  16:04           323.276 Default.SFX
+                            31/10/2020  16:04           373.452 Default64.SFX
+                            28/01/2019  21:39             1.170 Descript.ion
+                            11/06/2014  08:45             7.435 License.txt
+                            15/06/2021  04:00             3.924 Order.htm
+                            11/06/2021  06:17           633.496 Rar.exe
+                            06/03/2021  17:18            29.256 rar.lng
+                            14/06/2021  09:55           123.660 Rar.txt
+                            11/06/2021  06:17           571.544 RarExt.dll
+                            29/01/2020  20:00             3.083 rarext.lng
+                            11/06/2021  06:17           496.792 RarExt32.dll
+                            14/04/2017  23:46             1.392 RarFiles.lst
+                            14/07/2023  10:46                24 rarnew.dat
+                            07/05/2013  14:36             1.501 ReadMe.txt
+                            11/06/2021  06:17           412.312 Uninstall.exe
+                            15/06/2021  04:01             6.791 uninstall.lng
+                            28/01/2019  21:44               418 Uninstall.lst
+                            11/06/2021  06:17           422.552 UnRAR.exe
+                            14/04/2006  18:54               157 UnrarSrc.txt
+                            10/06/2021  12:21            88.553 WhatsNew.txt
+                            13/11/2020  09:31           310.847 WinCon.SFX
+                            13/11/2020  09:31           361.023 WinCon64.SFX
+                            18/05/2021  07:17         2.772.178 WinRAR.chm
+                            14/06/2021  07:36         2.636.952 WinRAR.exe
+                            15/06/2021  04:47            97.784 winrar.lng
+                            31/10/2020  16:04           276.172 Zip.SFX
+                            31/10/2020  16:04           307.916 Zip64.SFX
+                            14/07/2023  10:46                22 zipnew.dat
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+                    
